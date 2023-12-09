@@ -37,13 +37,20 @@ To add animated LaTeX, use the `<eq>` tag and place LaTeX inside it. For example
 or for more advanced usage (and using fragments),
 ```HTML
   <eq class="fragment" data-gradient='["red", "gold"]' data-color-precess="true">
-                        \begin{align*}
-                            \nabla \cdot \mathbf{E} &= 0 \\
-                            \nabla \cdot \mathbf{B} &= 0
-                         \end{align*}
+    \mathcal{L}=F_{\mu\nu}F^{\mu\nu}+\gamma\sqrt{(F_{\mu \nu}F^{\mu \nu})^2+(F_{\mu\nu}\tilde{F}^{\mu\nu})^2}
   </eq>
 ```
 [Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f)
+
+`align` environments are also supported. For example,
+```HTML
+<eq>
+  \begin{align*}
+      \nabla \cdot \mathbf{E} &= 0 \\
+      \nabla \cdot \mathbf{B} &= 0
+  \end{align*}
+</eq>
+```
 
 
 ## Options
