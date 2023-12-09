@@ -2,30 +2,30 @@
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
   </a>
-  <br>Reveal.js with Animated LaTeX<br>
+  <br><h1>Reveal.js with Animated LaTeX</h1><br>
 </p>
 
-# Setup
+## Setup
 
-Assuming you have reveal.js setup, clone this repository and place the `animation` directory at the root of the presentation.
+Assuming you have reveal.js setup, clone this repository and place the `latex-animation` directory at the root of the project.
 
 Then, install this package's one dependency with
 ```bash
 npm install svg-path-properties
 ```
 
-Lastly, place the following scripts **after** reveal has initialized in your HTML file
+Lastly, place the following scripts **after** reveal has initialized (`Reveal.initialize()`) in your HTML file
 ```js
 <script src="node_modules/svg-path-properties/dist/svg-path-properties.min.js"></script>
 <script src="latex-animation/SVGProcessing.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="latex-animation/Animate_SVGs.js"></script>
 ```
-**Note**. Do not import MathJax before these scripts as it will process your HTML before they can be animated. 
+**Note**. Do not import MathJax before these scripts as it will process your equations before they can be animated. 
 
-# Usage
+## Usage
 
-To get animated LaTeX, use the `<eq>` tag and place LaTeX inside it. For example,
+To add animated LaTeX, use the `<eq>` tag and place LaTeX inside it. For example,
 ```HTML
   <eq>
     \mathcal{L}=F_{\mu\nu}F^{\mu\nu}+\gamma\sqrt{(F_{\mu \nu}F^{\mu \nu})^2+(F_{\mu\nu}\tilde{F}^{\mu\nu})^2}
@@ -41,9 +41,10 @@ or for more advanced usage (and using fragments),
   </eq>
 ```
 
+## Options
 If you want to customize the animation, there are a number of parameters in the form of `data-` attributes.
 
-## Animation Speed (data-speed)
+### Animation Speed (data-speed)
 The increment of time (in seconds) between each stroke.
 ```HTML
 <eq data-speed="0.3">
@@ -51,7 +52,7 @@ The increment of time (in seconds) between each stroke.
 </eq>
 ```
 
-## Color/Color Gradient (data-gradient)
+### Color/Color Gradient (data-gradient)
 
 Any number of colors is accepted (and rgb/hex values).
 ```HTML
@@ -60,7 +61,7 @@ Any number of colors is accepted (and rgb/hex values).
 </eq>
 ```
 
-## Color Precession (Experimental)
+### Color Precession (Experimental)
 The gradient precesses in a loop.
 ```HTML
 <eq data-gradient='["red", "gold"]' data-color-precess="true">
@@ -68,7 +69,7 @@ The gradient precesses in a loop.
 </eq>
 ```
 
-## Animation Delay
+### Animation Delay
 Add a delay (in seconds) to the start of the animation.
 ```HTML
 <eq data-delay='1'>
