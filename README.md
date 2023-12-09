@@ -2,49 +2,76 @@
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
   </a>
-  <br><br>
-  <a href="https://github.com/hakimel/reveal.js/actions"><img src="https://github.com/hakimel/reveal.js/workflows/tests/badge.svg"></a>
-  <a href="https://slides.com/"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
+  <br>Reveal.js with Animated LaTeX<br>
 </p>
 
-reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free. Check out the live demo at [revealjs.com](https://revealjs.com/).
+# Setup
 
-The framework comes with a powerful feature set including [nested slides](https://revealjs.com/vertical-slides/), [Markdown support](https://revealjs.com/markdown/), [Auto-Animate](https://revealjs.com/auto-animate/), [PDF export](https://revealjs.com/pdf-export/), [speaker notes](https://revealjs.com/speaker-view/), [LaTeX typesetting](https://revealjs.com/math/), [syntax highlighted code](https://revealjs.com/code/) and an [extensive API](https://revealjs.com/api/).
+Assuming you have reveal.js setup, clone this repository and place the `animation` directory at the root of the presentation.
 
----
+Then, install this package's one dependency with
+```bash
+npm install svg-path-properties
+```
 
-Want to create reveal.js presentation in a graphical editor? Try <https://slides.com>. It's made by the same people behind reveal.js.
+Lastly, place the following scripts **after** reveal has initialized in your HTML file
+```js
+<script src="node_modules/svg-path-properties/dist/svg-path-properties.min.js"></script>
+<script src="latex-animation/SVGProcessing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="latex-animation/Animate_SVGs.js"></script>
+```
+**Note**. Do not import MathJax before these scripts as it will process your HTML before they can be animated. 
 
----
+# Usage
 
-### Sponsors
-Hakim's open source work is supported by <a href="https://github.com/sponsors/hakimel">GitHub sponsors</a>. Special thanks to:
-<div align="center">
-  <table>
-    <td align="center">
-      <a href="https://workos.com/?utm_campaign=github_repo&utm_medium=referral&utm_content=revealjs&utm_source=github">
-        <div>
-          <img src="https://user-images.githubusercontent.com/629429/151508669-efb4c3b3-8fe3-45eb-8e47-e9510b5f0af1.svg" width="290" alt="WorkOS">
-        </div>
-        <b>Your app, enterprise-ready.</b>
-        <div>
-          <sub>Start selling to enterprise customers with just a few lines of code. Add Single Sign-On (and more) in minutes instead of months.</sup>
-        </div>
-      </a>
-    </td>
-  </table>
-</div>
+To get animated LaTeX, use the `<eq>` tag and place LaTeX inside it. For example,
+```HTML
+  <eq>
+    \mathcal{L}=F_{\mu\nu}F^{\mu\nu}+\gamma\sqrt{(F_{\mu \nu}F^{\mu \nu})^2+(F_{\mu\nu}\tilde{F}^{\mu\nu})^2}
+  </eq>
+```
+or for more advanced usage (and using fragments),
+```HTML
+  <eq class="fragment" data-gradient='["red", "gold"]' data-color-precess="true">
+                        \begin{align*}
+                            \nabla \cdot \mathbf{E} &= 0 \\
+                            \nabla \cdot \mathbf{B} &= 0
+                         \end{align*}
+  </eq>
+```
 
----
+If you want to customize the animation, there are a number of parameters in the form of `data-` attributes.
 
-### Getting started
-- 🚀 [Install reveal.js](https://revealjs.com/installation)
-- 👀 [View the demo presentation](https://revealjs.com/demo)
-- 📖 [Read the documentation](https://revealjs.com/markup/)
-- 🖌 [Try the visual editor for reveal.js at Slides.com](https://slides.com/)
-- 🎬 [Watch the reveal.js video course (paid)](https://revealjs.com/course)
+## Animation Speed (data-speed)
+The increment of time (in seconds) between each stroke.
+```HTML
+<eq data-speed="0.3">
+  ...
+</eq>
+```
 
---- 
-<div align="center">
-  MIT licensed | Copyright © 2011-2023 Hakim El Hattab, https://hakim.se
-</div>
+## Color/Color Gradient (data-gradient)
+
+Any number of colors is accepted (and rgb/hex values).
+```HTML
+<eq data-gradient='["red", "gold"]'>
+  ...
+</eq>
+```
+
+## Color Precession (Experimental)
+The gradient precesses in a loop.
+```HTML
+<eq data-gradient='["red", "gold"]' data-color-precess="true">
+  ...
+</eq>
+```
+
+## Animation Delay
+Add a delay (in seconds) to the start of the animation.
+```HTML
+<eq data-delay='1'>
+  ...
+</eq>
+```
