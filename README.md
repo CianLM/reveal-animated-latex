@@ -31,6 +31,9 @@ To add animated LaTeX, use the `<eq>` tag and place LaTeX inside it. For example
     \mathcal{L}=F_{\mu\nu}F^{\mu\nu}+\gamma\sqrt{(F_{\mu \nu}F^{\mu \nu})^2+(F_{\mu\nu}\tilde{F}^{\mu\nu})^2}
   </eq>
 ```
+[Standard Animation](https://github.com/CianLM/reveal-animated-latex/assets/67507781/8f5634a2-5b8d-45ad-9a60-411369e472e2)
+
+
 or for more advanced usage (and using fragments),
 ```HTML
   <eq class="fragment" data-gradient='["red", "gold"]' data-color-precess="true">
@@ -40,6 +43,8 @@ or for more advanced usage (and using fragments),
                          \end{align*}
   </eq>
 ```
+[Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f)
+
 
 ## Options
 If you want to customize the animation, there are a number of parameters in the form of `data-` attributes.
@@ -60,6 +65,8 @@ Any number of colors is accepted (and rgb/hex values).
   ...
 </eq>
 ```
+[Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f)
+
 
 ### Color Precession (Experimental)
 The gradient precesses in a loop.
@@ -68,6 +75,7 @@ The gradient precesses in a loop.
   ...
 </eq>
 ```
+[Colour Precession](https://github.com/CianLM/reveal-animated-latex/assets/67507781/274938c1-8ab2-49ad-a346-c5feb64d0bf8)
 
 ### Animation Delay
 Add a delay (in seconds) to the start of the animation.
