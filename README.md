@@ -31,7 +31,9 @@ To add animated LaTeX, use the `<eq>` tag and place LaTeX inside it. For example
     \mathcal{L}=F_{\mu\nu}F^{\mu\nu}+\gamma\sqrt{(F_{\mu \nu}F^{\mu \nu})^2+(F_{\mu\nu}\tilde{F}^{\mu\nu})^2}
   </eq>
 ```
-[Standard Animation](https://github.com/CianLM/reveal-animated-latex/assets/67507781/8f5634a2-5b8d-45ad-9a60-411369e472e2.mp4)
+<!-- [Standard Animation](https://github.com/CianLM/reveal-animated-latex/assets/67507781/8f5634a2-5b8d-45ad-9a60-411369e472e2.mp4) -->
+
+https://github.com/CianLM/reveal-animated-latex/assets/67507781/f14af133-958b-436e-97a0-9eb38feebb8a
 
 
 or for more advanced usage (and using fragments),
@@ -40,7 +42,11 @@ or for more advanced usage (and using fragments),
     \mathcal{L}=F_{\mu\nu}F^{\mu\nu}+\gamma\sqrt{(F_{\mu \nu}F^{\mu \nu})^2+(F_{\mu\nu}\tilde{F}^{\mu\nu})^2}
   </eq>
 ```
-[Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f.mp4)
+<!-- [Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f.mp4) -->
+
+
+https://github.com/CianLM/reveal-animated-latex/assets/67507781/7fda5e2e-8297-4b31-92e8-6f764e0a2124
+
 
 `align` environments are also supported. For example,
 ```HTML
@@ -66,13 +72,16 @@ The increment of time (in seconds) between each stroke.
 
 ### Color/Color Gradient (data-gradient)
 
-Any number of colors is accepted (and rgb/hex values).
+Any number of colors $n \geq 1$ is accepted (as well as rgb/hex values).
 ```HTML
 <eq data-gradient='["red", "gold"]'>
   ...
 </eq>
 ```
-[Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f.mp4)
+<!-- [Red to Gold Gradient](https://github.com/CianLM/reveal-animated-latex/assets/67507781/5341c369-f355-4b36-a0ec-964c1618cc9f.mp4) -->
+
+
+https://github.com/CianLM/reveal-animated-latex/assets/67507781/7fda5e2e-8297-4b31-92e8-6f764e0a2124
 
 
 ### Color Precession (Experimental)
@@ -82,7 +91,12 @@ The gradient precesses in a loop.
   ...
 </eq>
 ```
-[Colour Precession](https://github.com/CianLM/reveal-animated-latex/assets/67507781/274938c1-8ab2-49ad-a346-c5feb64d0bf8.mp4)
+<!-- [Colour Precession](https://github.com/CianLM/reveal-animated-latex/assets/67507781/274938c1-8ab2-49ad-a346-c5feb64d0bf8.mp4) -->
+
+
+https://github.com/CianLM/reveal-animated-latex/assets/67507781/f76f6509-2c8d-422b-b83a-fc86ca48d15d
+
+
 
 ### Animation Delay
 Add a delay (in seconds) to the start of the animation.
