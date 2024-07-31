@@ -9,18 +9,14 @@
 
 Assuming you have reveal.js setup, clone this repository and place the `latex-animation` directory at the root of the project.
 
-Then, install this package's one dependency with
-```bash
-npm install svg-path-properties
-```
-
-Lastly, place the following scripts **after** reveal has initialized (`Reveal.initialize()`) in your HTML file
+Then place the following scripts **after** reveal has initialized (`Reveal.initialize()`) in your HTML file
 ```js
-<script src="node_modules/svg-path-properties/dist/svg-path-properties.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/svg-path-properties@1.3.0/dist/svg-path-properties.min.js"></script>
 <script src="latex-animation/SVGProcessing.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="latex-animation/Animate_SVGs.js"></script>
 ```
+
 **Note**. Do not import MathJax before these scripts as it will process your equations before they can be animated. 
 
 ## Usage
