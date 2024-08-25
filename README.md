@@ -16,6 +16,7 @@ npm install svg-path-properties
 
 Lastly, place the following scripts **after** reveal has initialized (`Reveal.initialize()`) in your HTML file
 ```js
+<link rel="stylesheet" href="latex-animation/animate_latex.css" />
 <script src="node_modules/svg-path-properties/dist/svg-path-properties.min.js"></script>
 <script src="latex-animation/SVGProcessing.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
